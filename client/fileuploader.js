@@ -744,7 +744,7 @@ qq.UploadDropZone.prototype = {
 
         // dt.effectAllowed is none in Safari 5
         // dt.types.contains check is for firefox            
-        return dt && dt.dropEffect != 'none' && dt.effectAllowed != 'none' && 
+        return dt && window.FileReader && dt.effectAllowed != 'none' && 
             (dt.files || (!isWebkit && dt.types.contains && dt.types.contains('Files')));
         
     }        
